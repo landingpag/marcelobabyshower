@@ -1,0 +1,47 @@
+:root{color-scheme:light;--ink:#414a35;--olive:#52603c;--line:#cfd3bd;--paper:#faf8ee}*{box-sizing:border-box}html{background:var(--paper)}body{margin:0;color:var(--ink);font-family:Georgia,serif;background:radial-gradient(ellipse at 24% 45%,#e9ebd660,transparent 50%),var(--paper)}body:before{content:"";display:block;height:9px;background:repeating-linear-gradient(90deg,#c3cba5 0 12px,#e6e9d7 12px 24px)}header,main,footer{width:min(1130px,89%);margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:24px 0;border-bottom:1px solid var(--line)}a{color:inherit}.brand{text-decoration:none;display:flex;align-items:center;gap:10px;font-size:17px}.heart{font-size:28px;color:var(--olive)}button,.map{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:40px;font:600 13px/1.3 system-ui,sans-serif;cursor:pointer}button{padding:10px 16px;background:transparent;color:var(--ink);border:1px solid #b1b99b;min-height:44px}button span:first-child{font-size:18px}main{display:grid;grid-template-columns:.92fr 1fr;align-items:center;gap:clamp(30px,6vw,86px);padding:58px 0 54px}.art{filter:drop-shadow(0 11px 9px #5c654120);animation:arrive .85s ease-out both}.art svg{width:100%;display:block;overflow:visible}.message{animation:arrive .8s .12s ease-out both}.eyebrow,small{text-transform:uppercase;font:650 11px system-ui,sans-serif;letter-spacing:.21em}.eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 4px}.eyebrow i{width:29px;height:1px;background:#98a47c}.eyebrow i:last-child{display:none}h1{margin:0;font-size:clamp(73px,8.9vw,124px);font-weight:400;letter-spacing:-.065em;line-height:1.13}.quote{font-style:italic;font-size:clamp(22px,2.2vw,31px);line-height:1.26;color:#67704f;margin:19px 0}.intro,footer{font:15px/1.6 system-ui,sans-serif}.intro{max-width:37ch;margin:0}.details{display:flex;gap:28px;border-block:1px solid var(--line);padding:19px 0;margin:25px 0 20px}.details div{display:grid;align-content:start;gap:6px}.details div+div{border-left:1px solid var(--line);padding-left:24px}strong{font-size:18px;font-weight:normal}.details span{font:13px system-ui,sans-serif}.map{padding:15px 19px;background:var(--olive);color:white;text-decoration:none}.map:hover{background:#404f30}.map svg{width:18px;fill:none;stroke:currentColor;stroke-width:1.6}.map span{margin-left:5px}footer{display:flex;justify-content:center;align-items:center;gap:13px;border-top:1px solid var(--line);padding:19px 0 28px;font-size:13px}footer span{font-size:24px}a:focus-visible,button:focus-visible{outline:3px solid #895932;outline-offset:4px}.duck{animation:bob 5s ease-in-out infinite}.glints{animation:shine 4s ease-in-out infinite}@keyframes arrive{from{opacity:0;transform:translateY(12px)}}@keyframes bob{50%{transform:translateY(-4px) rotate(.4deg);transform-origin:center}}@keyframes shine{50%{opacity:.38}}/* Tablet and smaller laptop layouts */
+@media (min-width: 701px) and (max-width: 1100px) {
+  header, main, footer { width: min(92%, 960px); }
+  main {
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+    gap: clamp(22px, 4vw, 44px);
+    padding-block: clamp(40px, 6vw, 66px);
+  }
+  .details { gap: 14px; }
+  .details div + div { padding-left: 14px; }
+  strong { font-size: 17px; }
+}
+
+/* Phones and narrow split-screen windows */
+@media (max-width: 700px) {
+  header, main, footer { width: min(calc(100% - 32px), 520px); }
+  header { flex-wrap: wrap; padding: 12px 0; gap: 8px; }
+  .brand { font-size: 14px; gap: 5px; }
+  button { padding: 8px 12px; font-size: 12px; }
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px 0 32px;
+  }
+  .art { width: clamp(165px, 52vw, 255px); }
+  .message { text-align: center; width: 100%; }
+  h1 { font-size: clamp(60px, 16vw, 84px); }
+  .eyebrow, .details { justify-content: center; }
+  .eyebrow i:last-child { display: block; }
+  .quote { margin: 10px 0 14px; }
+  .intro { margin: auto; }
+  .details { gap: 14px; }
+  .details div + div { padding-left: 14px; }
+  strong { font-size: 16px; }
+  footer { align-items: flex-start; }
+}
+
+@media (max-width: 380px) {
+  .details { flex-direction: column; }
+  .details div + div { border: 0; padding: 0; }
+  .map { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *:before { animation: none !important; }
+}
